@@ -3,12 +3,12 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBtj9-vABy8DaKqcSt2vGp4m8rbR6HHf5w",
-  authDomain: "fox-entregas-2092c.firebaseapp.com",
-  projectId: "fox-entregas-2092c",
-  storageBucket: "fox-entregas-2092c.appspot.com",
-  messagingSenderId: "642039989577",
-  appId: "1:642039989577:web:5795d658d665f06a56c698"
+  apiKey: "AIzaSyAWSBI2h8KS9SJQA5xcrjKgpVsh5BMZbwA",
+  authDomain: "piano-s-truck.firebaseapp.com",
+  projectId: "piano-s-truck",
+  storageBucket: "piano-s-truck.appspot.com",
+  messagingSenderId: "354633806441",
+  appId: "1:354633806441:web:08487cc2c1955359b3e8f8"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -16,3 +16,4 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app)
 
 export const db = getFirestore(app)
+

@@ -9,7 +9,7 @@ import { selectIsUserLoggedIn } from "../../store/slices/userSlice";
 export function HomeView() {
   const isUserLoggedIn = useSelector(selectIsUserLoggedIn)
   return (
-    <Layout withoutMargin>
+    <Layout >
       <Banner className="vh-100">
         <Container className="h-100 d-flex flex-column justify-content-center align-items-center">
           <Title className="text-center mt-auto mt-lg-0">Transporte seu piano de forma segura</Title>
