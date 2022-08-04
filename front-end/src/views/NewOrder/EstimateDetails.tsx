@@ -10,7 +10,7 @@ export function EstimateDetails () {
   if (!hasCurrentEstimate) {
     return (
       <WithoutEstimateStyled className="d-none d-md-flex">
-        <p className="m-0">Preencha os dados ao lado para ver o preço</p>
+        <p className="m-0">Preencha os dados ao lado para ver o valor.</p>
       </WithoutEstimateStyled>
     )
   }

@@ -31,7 +31,6 @@ export function NewOrderView() {
 const Banner = styled.div`
   background: url(${bgDesktop}) no-repeat center center;
   background-size: cover;
-  background-attachment: fixed;
   @media (min-width: 576px) {
     background-image: url(${bgDesktop});
   }
@@ -45,7 +44,7 @@ const Banner = styled.div`
 const CardOrcamento = styled.div`
   color: #595959;
   border:none;
-  margin-top: 44px;
-  padding: 20px;
+  margin-top:55px;
+  padding: 40px;
   background-color: rgba(0,0,0,0.7);
 `

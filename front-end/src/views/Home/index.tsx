@@ -15,7 +15,7 @@ export function HomeView() {
           <Title className="text-center mt-auto mt-lg-0">Transporte seu piano de forma segura</Title>
           <P className="text-center mt-auto mt-lg-0">e fique tranquilo, a afinação é com a gente!</P>
           {isUserLoggedIn ? (
-            <CustomButton variant="success" size='lg' className="mt-auto mt-lg-3 mb-4" to='/novo-pedido'>Faça seu orçamento</CustomButton>
+            <CustomButton size='lg' className="mt-auto mt-lg-3 mb-4" to='/novo-pedido'>Faça seu orçamento</CustomButton>
           ) : (
             <>
               <CustomButton size='lg' className="mt-auto mt-lg-3 mb-5" to='/cadastro'>Cadastrar</CustomButton>

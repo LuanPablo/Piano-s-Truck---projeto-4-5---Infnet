@@ -55,20 +55,20 @@ export function EstimateForm () {
       <Form onSubmit={formik.handleSubmit}>
         <AutocompleteField
           {...getFieldProps('pickupAddress')}
-          label="Endereço de retirada (A)"
+          label="Endereço de retirada*"
           placeholder="Informe o endereço completo"
           onChange={(address) => formik.setFieldValue('pickupAddress', address)}
         />
         <AutocompleteField
           {...getFieldProps('deliveryAddress')}
-          label="Endereço de entrega (B)"
+          label="Endereço de entrega*"
           placeholder="Informe o endereço completo"
           onChange={(address) => formik.setFieldValue('deliveryAddress', address)}
         />
         <FormField
           {...getFieldProps('comments')}
-          label="Instruções para motoboy"
-          placeholder="Descreva o que o entregador deve fazer e detalhes importantes"
+          label="Instruções/complemento"
+          placeholder="Instruções adicionais ou complemento"
           as='textarea'
         />
         {!currentEstimate && (
@@ -77,7 +77,7 @@ export function EstimateForm () {
               type='submit'
               loading={formik.isValidating || formik.isSubmitting}
               disabled={formik.isValidating || formik.isSubmitting}
-            >Calcular preço</CustomButton>
+            >Calcular</CustomButton>
           </div>
         )}
       </Form>
@@ -87,7 +87,7 @@ export function EstimateForm () {
           type='button'
           onClick={handleChangeAddress}
           className='mb-3 mb-md-0'
-        >Alterar endereços</CustomButton>
+        >Editar</CustomButton>
       )}
     </>
   )

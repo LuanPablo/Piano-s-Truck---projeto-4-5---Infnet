@@ -33,10 +33,10 @@ export const createEstimate = async ({ pickupAddress, deliveryAddress, comments 
 }
 
 const getValue = (meters: number, minutes: number) => {
-  let value = 15
+  let value = 1600
   value += minutes * 0.25
-  value += meters * 0.10
-  const min = 500
+  value += meters * 0.05
+  const min = 10
   if (value < min) {
     return min
   }

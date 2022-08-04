@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { CustomButton } from "../../components/CustomButton";
 import { FormField } from "../../components/FormField";
 import { Layout } from "../../components/Layout";
-import { PageTitle } from "../../components/PageTitle";
 import * as yup from 'yup'
 import { loginUser } from "../../services/loginUser";
 import { FirebaseError } from "firebase/app";
@@ -20,7 +19,7 @@ type FormValues = {
   password: string
 }
 
-export function LoginView () {
+export function LoginView() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const formik = useFormik({
@@ -58,39 +57,41 @@ export function LoginView () {
     }
   }
   return (
-    <Layout>
+    <Layout withoutMargin>
       <Banner className="vh-100">
-      <Container>
-        <Row className="justify-content-center">
-          <Col lg={4}>
-            <PageTitle>Login</PageTitle>
-            <Form onSubmit={formik.handleSubmit}>
-              <FormField
-                {...getFieldProps('email')}
-                label='E-mail'
-                type='email'
-                placeholder='Informe o seu e-mail de acesso'
-              />
-              <FormField
-                {...getFieldProps('password')}
-                label='Senha'
-                type='password'
-                placeholder='Informe sua senha de acesso'
-              />
-              <div className="d-grid mb-4">
-                <CustomButton
-                  type="submit"
-                  loading={formik.isValidating || formik.isSubmitting}
-                  disabled={formik.isValidating || formik.isSubmitting}
-                >
-                  Entrar
-                </CustomButton>
-              </div>
-              <p className="text-center">Não possui conta?<br/><Link to='/cadastro'>Cadastrar</Link></p>
-            </Form>
-          </Col>
-        </Row>
-      </Container>
+        <Container className="h-100 d-flex justify-content-center align-items-center">
+          <CardLogin>
+            <Row className="justify-content-center">
+              <Col lg={4}>
+                <Title>Login</Title>
+                <Form onSubmit={formik.handleSubmit}>
+                  <FormField
+                    {...getFieldProps('email')}
+                    label='E-mail'
+                    type='email'
+                    placeholder='Informe o seu e-mail.'
+                  />
+                  <FormField
+                    {...getFieldProps('password')}
+                    label='Senha'
+                    type='password'
+                    placeholder='Informe sua senha.'
+                  />
+                  <div className="d-grid mb-4">
+                    <CustomButton
+                      type="submit"
+                      loading={formik.isValidating || formik.isSubmitting}
+                      disabled={formik.isValidating || formik.isSubmitting}
+                    >
+                      Entrar
+                    </CustomButton>
+                  </div>
+                  <p className="text-center">Não possui conta?<br /><Link to='/cadastro'>Cadastrar</Link></p>
+                </Form>
+              </Col>
+            </Row>
+          </CardLogin>
+        </Container>
       </Banner>
     </Layout>
   )
@@ -109,4 +110,16 @@ const Banner = styled.div`
   @media (min-width: 992px) {
     background-image: url(${bgDesktop});
   }
+`
+const CardLogin = styled.div`
+  color: #595959;
+  border:none;
+  width:900px;
+  padding: 40px;
+  background-color: rgba(0,0,0,0.7);
+`
+
+const Title = styled.h1`
+  text-align: center;
+  color: #fff;
 `
