@@ -6,8 +6,10 @@ import { toast } from "react-toastify";
 import { createOrder } from "../../services/createOrder";
 import { selectUser } from "../../store/slices/userSlice";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import bgDesktop from "../../assets/img/banner_home.png";
 
-export function EstimateFinish () {
+export function EstimateFinish() {
   const currentEstimate = useSelector(selectCurrentEstimate)
   const user = useSelector(selectUser)
   const dispatch = useDispatch()
@@ -32,13 +34,31 @@ export function EstimateFinish () {
     toast.error('Ocorreu um erro ao realizar o pagamento. Por favor, entre em contato conosco.')
   }
   return (
-    <div className="mt-3">
-      <PayPalButton
-        value={currentEstimate.value}
-        customId={currentEstimate.id}
-        onSuccess={handlePayPalSuccess}
-        onError={handlePayPalError}
-      />
+    <div className="vh-100">
+      <Banner>
+        <div className="mt-3">
+          <PayPalButton
+            value={currentEstimate.value}
+            customId={currentEstimate.id}
+            onSuccess={handlePayPalSuccess}
+            onError={handlePayPalError}
+          />
+        </div>
+      </Banner>
     </div>
   )
 }
+
+const Banner = styled.div`
+  background: url(${bgDesktop}) no-repeat center center;
+  background-size: cover;
+  @media (min-width: 576px) {
+    background-image: url(${bgDesktop});
+  }
+  @media (min-width: 768px) {
+    background-image: url(${bgDesktop});
+  }
+  @media (min-width: 992px) {
+    background-image: url(${bgDesktop});
+  }
+`
